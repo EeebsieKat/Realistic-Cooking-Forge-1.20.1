@@ -1,0 +1,130 @@
+{
+  "mod_elements": [
+    {
+      "name": "CookingStation",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooking_station",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/realistic_cooking/blockstates/cooking_station.json",
+          "src/main/java/net/mcreator/realisticcooking/block/entity/CookingStationBlockEntity.java",
+          "src/main/resources/data/realistic_cooking/loot_tables/blocks/cooking_station.json",
+          "src/main/resources/assets/realistic_cooking/models/item/cooking_station.json",
+          "src/main/resources/assets/realistic_cooking/models/block/cooking_station.json",
+          "src/main/java/net/mcreator/realisticcooking/block/CookingStationBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "StoveGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stove_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/client/gui/StoveGUIScreen.java",
+          "src/main/java/net/mcreator/realisticcooking/world/inventory/StoveGUIMenu.java",
+          "src/main/java/net/mcreator/realisticcooking/network/StoveGUISlotMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "PotatoSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potato_soup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/item/PotatoSoupItem.java",
+          "src/main/resources/assets/realistic_cooking/models/item/potato_soup.json"
+        ]
+      }
+    },
+    {
+      "name": "StoveGUIWhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stove_gui_while_this_gui_is_open_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/procedures/StoveGUIWhileThisGUIIsOpenTickProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SoupStoveRemove",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soup_stove_remove",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/procedures/SoupStoveRemoveProcedure.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "block.realistic_cooking.cooking_station": "Cooking Station",
+      "block.realistic_cooking.cooking_station.description_0": "For All Foods",
+      "block.realistic_cooking.cooking_station.description_1": "Give FE To Run",
+      "item.realistic_cooking.potato_soup": "Potato Soup"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/realisticcooking/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModMenus.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModScreens.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModBlocks.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModBlockEntities.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModItems.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModTabs.java",
+      "src/main/resources/META-INF/mods.toml",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/realisticcooking/RealisticCookingMod.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "realistic_cooking",
+    "modName": "Realistic Cooking",
+    "version": "1.0.0",
+    "author": "MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "net.mcreator.realisticcooking"
+  },
+  "mcreatorVersion": 202600233518
+}

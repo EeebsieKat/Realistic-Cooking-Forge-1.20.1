@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minecraft:block/cauldron_inner",
+    "up": "minecraft:block/anvil",
+    "north": "minecraft:block/blast_furnace_front",
+    "east": "minecraft:block/anvil",
+    "south": "minecraft:block/anvil",
+    "west": "minecraft:block/anvil",
+    "particle": "minecraft:block/cauldron_inner"
+  },
+  "render_type": "solid"
+}

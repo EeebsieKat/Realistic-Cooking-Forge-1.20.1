@@ -1,0 +1,8 @@
+{
+  "block.realistic_cooking.cooking_station": "Cooking Station",
+  "block.realistic_cooking.cooking_station.description_0": "For All Foods",
+  "block.realistic_cooking.cooking_station.description_1": "Give FE To Run",
+  "item.realistic_cooking.potato_soup": "Potato Soup",
+  "gui.realistic_cooking.stove_gui.label_stove": "Stove",
+  "gui.realistic_cooking.stove_gui.button_craft": "Craft"
+}
