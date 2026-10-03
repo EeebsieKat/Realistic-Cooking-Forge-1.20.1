@@ -3,11 +3,11 @@
   "_type": "gui",
   "definition": {
     "type": 1,
-    "width": 176,
-    "height": 192,
-    "inventoryOffsetX": 0,
+    "width": 428,
+    "height": 241,
+    "inventoryOffsetX": 54,
     "inventoryOffsetY": 12,
-    "renderBgLayer": true,
+    "renderBgLayer": false,
     "doesPauseGame": false,
     "components": [
       {
@@ -24,7 +24,7 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
-          "x": 159,
+          "x": 204,
           "y": 44,
           "locked": false
         }
@@ -43,7 +43,7 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
-          "x": 159,
+          "x": 204,
           "y": 62,
           "locked": false
         }
@@ -62,97 +62,8 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
-          "x": 159,
+          "x": 204,
           "y": 80,
-          "locked": false
-        }
-      },
-      {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": ""
-          },
-          "disablePlacement": {
-            "fixedValue": false
-          },
-          "id": 3,
-          "disablePickup": {
-            "fixedValue": false
-          },
-          "dropItemsWhenNotBound": true,
-          "x": 177,
-          "y": 44,
-          "locked": false
-        }
-      },
-      {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": ""
-          },
-          "disablePlacement": {
-            "fixedValue": false
-          },
-          "id": 4,
-          "disablePickup": {
-            "fixedValue": false
-          },
-          "dropItemsWhenNotBound": true,
-          "x": 177,
-          "y": 62,
-          "locked": false
-        }
-      },
-      {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": ""
-          },
-          "disablePlacement": {
-            "fixedValue": false
-          },
-          "id": 5,
-          "disablePickup": {
-            "fixedValue": false
-          },
-          "dropItemsWhenNotBound": true,
-          "x": 177,
-          "y": 80,
-          "locked": false
-        }
-      },
-      {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": ""
-          },
-          "disablePlacement": {
-            "fixedValue": false
-          },
-          "id": 6,
-          "disablePickup": {
-            "fixedValue": false
-          },
-          "dropItemsWhenNotBound": true,
-          "x": 213,
-          "y": 80,
-          "locked": false
-        }
-      },
-      {
-        "type": "outputslot",
-        "data": {
-          "id": 7,
-          "disablePickup": {
-            "fixedValue": false
-          },
-          "dropItemsWhenNotBound": true,
-          "x": 249,
-          "y": 62,
           "locked": false
         }
       },
@@ -165,35 +76,86 @@
           "onClick": "StoveCrafting",
           "width": 50,
           "height": 20,
-          "x": 195,
-          "y": 107,
+          "x": 60,
+          "y": 170,
           "locked": false
         }
       },
       {
-        "type": "label",
+        "type": "inputslot",
         "data": {
-          "name": "label_stove",
-          "text": {
-            "fixedValue": "Stove"
+          "inputLimit": {
+            "value": "Items.BOWL"
           },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
+          "disablePlacement": {
+            "fixedValue": false
           },
-          "hasShadow": false,
-          "x": 195,
-          "y": 26,
+          "id": 3,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 258,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 4,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 312,
+          "y": 62,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 5,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 105,
+          "y": 44,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stove_gui.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": -1,
+          "locked": true
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "nothin here",
+          "name": "textfeild",
+          "width": 58,
+          "height": 20,
+          "x": 45,
+          "y": 42,
           "locked": false
         }
       }
     ],
+    "onTick": "StoveGUIWhileThisGUIIsOpenTick",
     "gridSettings": {
       "sx": 18,
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": true
+      "snapOnGrid": false
     }
   }
 }

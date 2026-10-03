@@ -33,7 +33,7 @@ import java.util.stream.IntStream;
 import io.netty.buffer.Unpooled;
 
 public class CookingStationBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.withSize(8, ItemStack.EMPTY);
+	private NonNullList<ItemStack> stacks = NonNullList.withSize(6, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public CookingStationBlockEntity(BlockPos position, BlockState state) {
@@ -114,7 +114,9 @@ public class CookingStationBlockEntity extends RandomizableContainerBlockEntity 
 
 	@Override
 	public boolean canPlaceItem(int index, ItemStack stack) {
-		if (index == 7)
+		if (index == 4)
+			return false;
+		if (index == 5)
 			return false;
 		return true;
 	}

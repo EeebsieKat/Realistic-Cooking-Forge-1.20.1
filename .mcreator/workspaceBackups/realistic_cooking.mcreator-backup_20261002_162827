@@ -1,0 +1,272 @@
+{
+  "mod_elements": [
+    {
+      "name": "CookingStation",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooking_station",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/realistic_cooking/blockstates/cooking_station.json",
+          "src/main/java/net/mcreator/realisticcooking/block/entity/CookingStationBlockEntity.java",
+          "src/main/resources/data/realistic_cooking/loot_tables/blocks/cooking_station.json",
+          "src/main/resources/assets/realistic_cooking/models/item/cooking_station.json",
+          "src/main/resources/assets/realistic_cooking/models/block/cooking_station.json",
+          "src/main/java/net/mcreator/realisticcooking/block/CookingStationBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "StoveGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stove_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/client/gui/StoveGUIScreen.java",
+          "src/main/java/net/mcreator/realisticcooking/network/StoveGUIButtonMessage.java",
+          "src/main/java/net/mcreator/realisticcooking/world/inventory/StoveGUIMenu.java"
+        ]
+      }
+    },
+    {
+      "name": "StoveCrafting",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stove_crafting",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/procedures/StoveCraftingProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "PotatoSoupPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potato_soup_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/procedures/PotatoSoupPlayerFinishesUsingItemProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BeefSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "beef_soup",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/realistic_cooking/models/item/beef_soup.json",
+          "src/main/java/net/mcreator/realisticcooking/item/BeefSoupItem.java"
+        ]
+      }
+    },
+    {
+      "name": "ChickenSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chicken_soup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/item/ChickenSoupItem.java",
+          "src/main/resources/assets/realistic_cooking/models/item/chicken_soup.json"
+        ]
+      }
+    },
+    {
+      "name": "PorkSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pork_soup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/item/PorkSoupItem.java",
+          "src/main/resources/assets/realistic_cooking/models/item/pork_soup.json"
+        ]
+      }
+    },
+    {
+      "name": "SalmonSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "salmon_soup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/item/SalmonSoupItem.java",
+          "src/main/resources/assets/realistic_cooking/models/item/salmon_soup.json"
+        ]
+      }
+    },
+    {
+      "name": "CodSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cod_soup",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/realistic_cooking/models/item/cod_soup.json",
+          "src/main/java/net/mcreator/realisticcooking/item/CodSoupItem.java"
+        ]
+      }
+    },
+    {
+      "name": "PotatoSoupb",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potato_soupb",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/item/PotatoSoupbItem.java",
+          "src/main/resources/assets/realistic_cooking/models/item/potato_soupb.json"
+        ]
+      }
+    },
+    {
+      "name": "CarrotSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "carrot_soup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/item/CarrotSoupItem.java",
+          "src/main/resources/assets/realistic_cooking/models/item/carrot_soup.json"
+        ]
+      }
+    },
+    {
+      "name": "RabbitSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rabbit_soup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/item/RabbitSoupItem.java",
+          "src/main/resources/assets/realistic_cooking/models/item/rabbit_soup.json"
+        ]
+      }
+    },
+    {
+      "name": "MuttonSoup",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutton_soup",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/realistic_cooking/models/item/mutton_soup.json",
+          "src/main/java/net/mcreator/realisticcooking/item/MuttonSoupItem.java"
+        ]
+      }
+    },
+    {
+      "name": "DescriptionOfSoup",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "description_of_soup",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/realisticcooking/procedures/DescriptionOfSoupProcedure.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "block.realistic_cooking.cooking_station": "Cooking Station",
+      "block.realistic_cooking.cooking_station.description_0": "For All Foods",
+      "block.realistic_cooking.cooking_station.description_1": "Give FE To Run",
+      "gui.realistic_cooking.stove_gui.label_stove": "Stove",
+      "gui.realistic_cooking.stove_gui.button_craft": "Craft",
+      "item.realistic_cooking.beef_soup": "Beef Soup",
+      "item.realistic_cooking.chicken_soup": "Chicken Soup",
+      "item.realistic_cooking.pork_soup": "Pork Soup",
+      "item.realistic_cooking.salmon_soup": "Salmon Soup",
+      "item.realistic_cooking.cod_soup": "Cod Soup",
+      "item.realistic_cooking.potato_soupb": "Potato Soup",
+      "item.realistic_cooking.carrot_soup": "Carrot Soup",
+      "item.realistic_cooking.rabbit_soup": "Rabbit Soup",
+      "item.realistic_cooking.mutton_soup": "Mutton Soup",
+      "gui.realistic_cooking.stove_gui.yht": "",
+      "gui.realistic_cooking.stove_gui.check": "",
+      "gui.realistic_cooking.stove_gui.label_description": "description",
+      "gui.realistic_cooking.stove_gui.label_food_points": "food_points",
+      "gui.realistic_cooking.stove_gui.label_empty": "soup_type",
+      "gui.realistic_cooking.stove_gui.label_soup_type": "soup_type"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/realisticcooking/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModMenus.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModScreens.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModBlocks.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModBlockEntities.java",
+      "src/main/java/net/mcreator/realisticcooking/init/RealisticCookingModItems.java",
+      "src/main/resources/META-INF/mods.toml",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/realisticcooking/RealisticCookingMod.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "realistic_cooking",
+    "modName": "Realistic Cooking",
+    "version": "1.0.0",
+    "author": "MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "net.mcreator.realisticcooking"
+  },
+  "mcreatorVersion": 202600233518
+}

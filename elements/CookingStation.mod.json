@@ -109,12 +109,13 @@
     "hasInventory": true,
     "guiBoundTo": "StoveGUI",
     "openGUIOnRightClick": true,
-    "inventorySize": 8,
+    "inventorySize": 6,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [
-      7
+      4,
+      5
     ],
     "inventoryInSlotIDs": [],
     "hasEnergyStorage": true,

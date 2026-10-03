@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "minecraft:item/beetroot_soup"
+    "layer0": "realistic_cooking:item/potato_soup"
   }
 }

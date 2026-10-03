@@ -4,10 +4,14 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -19,6 +23,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.realisticcooking.procedures.StoveGUIWhileThisGUIIsOpenTickProcedure;
 import net.mcreator.realisticcooking.init.RealisticCookingModMenus;
 
 import java.util.function.Supplier;
@@ -26,11 +31,12 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
+@Mod.EventBusSubscriber
 public class StoveGUIMenu extends AbstractContainerMenu implements RealisticCookingModMenus.MenuAccessor {
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 10)
+			if (!this.containsKey(key) && this.size() >= 9)
 				return null;
 			return super.put(key, value);
 		}
@@ -50,7 +56,7 @@ public class StoveGUIMenu extends AbstractContainerMenu implements RealisticCook
 		super(RealisticCookingModMenus.STOVE_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(8);
+		this.internal = new ItemStackHandler(6);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -85,43 +91,33 @@ public class StoveGUIMenu extends AbstractContainerMenu implements RealisticCook
 					});
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 34, 21) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 205, 45) {
 			private final int slot = 0;
 			private int x = StoveGUIMenu.this.x;
 			private int y = StoveGUIMenu.this.y;
 		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 34, 39) {
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 205, 63) {
 			private final int slot = 1;
 			private int x = StoveGUIMenu.this.x;
 			private int y = StoveGUIMenu.this.y;
 		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 34, 57) {
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 205, 81) {
 			private final int slot = 2;
 			private int x = StoveGUIMenu.this.x;
 			private int y = StoveGUIMenu.this.y;
 		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 52, 21) {
+		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 259, 99) {
 			private final int slot = 3;
 			private int x = StoveGUIMenu.this.x;
 			private int y = StoveGUIMenu.this.y;
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return Items.BOWL == stack.getItem();
+			}
 		}));
-		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 52, 39) {
+		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 313, 63) {
 			private final int slot = 4;
-			private int x = StoveGUIMenu.this.x;
-			private int y = StoveGUIMenu.this.y;
-		}));
-		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 52, 57) {
-			private final int slot = 5;
-			private int x = StoveGUIMenu.this.x;
-			private int y = StoveGUIMenu.this.y;
-		}));
-		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 88, 57) {
-			private final int slot = 6;
-			private int x = StoveGUIMenu.this.x;
-			private int y = StoveGUIMenu.this.y;
-		}));
-		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 124, 39) {
-			private final int slot = 7;
 			private int x = StoveGUIMenu.this.x;
 			private int y = StoveGUIMenu.this.y;
 
@@ -130,11 +126,26 @@ public class StoveGUIMenu extends AbstractContainerMenu implements RealisticCook
 				return false;
 			}
 		}));
+		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 106, 45) {
+			private final int slot = 5;
+			private int x = StoveGUIMenu.this.x;
+			private int y = StoveGUIMenu.this.y;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return false;
+			}
+		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
-				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 25 + 84 + si * 18));
+				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 180 + 8 + sj * 18, 49 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
-			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 25 + 142));
+			this.addSlot(new Slot(inv, si, 180 + 8 + si * 18, 49 + 142));
 	}
 
 	@Override
@@ -157,16 +168,16 @@ public class StoveGUIMenu extends AbstractContainerMenu implements RealisticCook
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 8) {
-				if (!this.moveItemStackTo(itemstack1, 8, this.slots.size(), true))
+			if (index < 6) {
+				if (!this.moveItemStackTo(itemstack1, 6, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 8, false)) {
-				if (index < 8 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 8 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 6, false)) {
+				if (index < 6 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 6 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 8, 8 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 6, 6 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
@@ -266,12 +277,16 @@ public class StoveGUIMenu extends AbstractContainerMenu implements RealisticCook
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
 				for (int j = 0; j < internal.getSlots(); ++j) {
+					if (j == 5)
+						continue;
 					playerIn.drop(internal.getStackInSlot(j), false);
 					if (internal instanceof IItemHandlerModifiable ihm)
 						ihm.setStackInSlot(j, ItemStack.EMPTY);
 				}
 			} else {
 				for (int i = 0; i < internal.getSlots(); ++i) {
+					if (i == 5)
+						continue;
 					playerIn.getInventory().placeItemBackInInventory(internal.getStackInSlot(i));
 					if (internal instanceof IItemHandlerModifiable ihm)
 						ihm.setStackInSlot(i, ItemStack.EMPTY);
@@ -288,5 +303,17 @@ public class StoveGUIMenu extends AbstractContainerMenu implements RealisticCook
 	@Override
 	public Map<String, Object> getMenuState() {
 		return menuState;
+	}
+
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		Player entity = event.player;
+		if (event.phase == TickEvent.Phase.END && entity.containerMenu instanceof StoveGUIMenu menu) {
+			Level world = menu.world;
+			double x = menu.x;
+			double y = menu.y;
+			double z = menu.z;
+			StoveGUIWhileThisGUIIsOpenTickProcedure.execute(entity);
+		}
 	}
 }

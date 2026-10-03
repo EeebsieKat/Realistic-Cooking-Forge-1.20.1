@@ -18,7 +18,6 @@ import net.minecraft.server.TickTask;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
-import net.mcreator.realisticcooking.init.RealisticCookingModTabs;
 import net.mcreator.realisticcooking.init.RealisticCookingModMenus;
 import net.mcreator.realisticcooking.init.RealisticCookingModItems;
 import net.mcreator.realisticcooking.init.RealisticCookingModBlocks;
@@ -48,7 +47,6 @@ public class RealisticCookingMod {
 		RealisticCookingModBlocks.REGISTRY.register(bus);
 		RealisticCookingModBlockEntities.REGISTRY.register(bus);
 		RealisticCookingModItems.REGISTRY.register(bus);
-		RealisticCookingModTabs.REGISTRY.register(bus);
 		RealisticCookingModMenus.REGISTRY.register(bus);
 		// Start of user code block mod init
 		// End of user code block mod init
